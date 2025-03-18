@@ -5,6 +5,7 @@ Architecture for this project:
 
 
 
+
 Steps to Run the project and tests:
 
 1.	Having docker installed
