@@ -1,3 +1,10 @@
+Architecture for this project:
+
+
+<img width="484" alt="image" src="https://github.com/user-attachments/assets/b7dfc830-f226-4cc6-913c-d4ea28f797b8" />
+
+
+
 Steps to Run the project and tests:
 
 1.	Having docker installed
