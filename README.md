@@ -3,8 +3,15 @@ Architecture for this project:
 
 <img width="484" alt="image" src="https://github.com/user-attachments/assets/b7dfc830-f226-4cc6-913c-d4ea28f797b8" />
 
+For this project I decided to use a microservice oriented architecture: A dockerized PostgreSQL Database, a dockerized PGAdmin client and a Python Middleware to expose each method as Restful Services which will be useful in case a frontend is consuming. This will allow us to make scalability easier in case we have to build either an on-premise or cloud based solutions in a Kubernetes cluster. 
 
+Besides that budget management by brandt, deactivating campaigns depending on debt, and increasing total daily and monthly expenses for each brand is mainly managed automatically by the DB structure and triggers. Other aspects such as dayparting, daily spent reset, monthly spent reset, activating campaigns if there is no debt associated and registering new expenseses are functionalities managed by the Python Middleware 
+an
 
+Assumptions
+-In case a brand surpassed a daily budget, the remaining will be reflected as debt
+- I also assumed a large database for the production environment, which is why I decided to focus the solution on the Database structure and made triggers to take part of the solution when it comes to computing debt, increasing daily and monthly expenses and managed campaign deactivation based on debt.
+- To make this solution simpler managing dayparting, daily reset, monthly reset do not include an automatic execution at specific hours or days. However, for a final production environment this should be set up either in the Middleware or as DB Jobs
 
 Steps to Run the project and tests:
 
