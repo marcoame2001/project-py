@@ -7,7 +7,7 @@ For this project I decided to use a microservice oriented architecture: A docker
 
 Besides that budget management by brand, deactivating campaigns depending on debt, and increasing total daily and monthly expenses for each brand is mainly managed automatically by the DB structure and triggers. Other aspects such as dayparting, daily spent reset, monthly spent reset, activating campaigns if there is no debt associated and registering new expenseses are functionalities managed by the Python Middleware.
 
-Assumptions
+Assumptions:
 -In case a brand surpassed a daily budget, the remaining will be reflected as debt
 - I also assumed a large database for the production environment, which is why I decided to focus the solution on the Database structure and made triggers to take part of the solution when it comes to computing debt, increasing daily and monthly expenses and managed campaign deactivation based on debt.
 - To make this solution simpler managing dayparting, daily reset, monthly reset do not include an automatic execution at specific hours or days. However, for a final production environment this should be set up either in the Middleware or as DB Jobs. If the second option is taken and we manage a large dataset we should separate he DB into two clusters: DB cluster and Job Cluster.
